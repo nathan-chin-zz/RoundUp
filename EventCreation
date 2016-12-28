@@ -1,0 +1,51 @@
+package com.example.vikasperaka.firebasetestlogin1;
+
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EventCreation extends AppCompatActivity {
+
+    private Button buttonTest1;
+    private List<Boolean> values;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_event_creation);
+
+        buttonTest1 = (Button)findViewById(R.id.buttonTest1);
+        buttonTest1.setBackgroundColor(Color.RED);
+
+        values = new ArrayList<>();
+        for (int i = 0; i < 3; i++){
+            values.add(false);
+        }
+
+        //Changes colors by alternating between red and green.
+        buttonTest1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                ColorDrawable c = (ColorDrawable)buttonTest1.getBackground();
+                if (c.getColor() == Color.RED){
+                    buttonTest1.setBackgroundColor(Color.GREEN);
+                    values.set(0,true);
+                }
+
+                else{
+                    buttonTest1.setBackgroundColor(Color.RED);
+                    values.set(0,false);
+                }
+
+            }
+        });
+    }
+
+}

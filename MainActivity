@@ -1,0 +1,31 @@
+package com.example.vikasperaka.firebasetestlogin1;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.content.Intent;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    /*
+    when button to register is clicked, takes to login screen.
+     */
+    public void btnRegistration_Click(View view){
+        Intent i = new Intent(MainActivity.this, RegistrationActivity.class);
+        startActivity(i);
+    }
+
+    /*
+    when button to login is clicked, takes to login screen. Assuming user already registered.
+     */
+    public void btnLogin_Click(View view){
+        Intent i = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(i);
+    }
+}
